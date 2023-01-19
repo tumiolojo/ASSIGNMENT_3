@@ -445,23 +445,3 @@ def plot_future_value(df, start_year, end_year, fit_function, y_var, param, sigm
     plt.show()
 
 
-#get param and covar for exponential function again
-param, covar = fit_curve(China_GDP, 'GDP per capita (current US$)', exponential, exp_p0 )
-sigma = np.sqrt(np.diag(covar))
-
-
-plot_future_value(China_GDP, 1960, 2031, exponential, 'GDP per capita (current US$)', param, sigma)
-
-
-
-#get param and covar for exponential function again
-param, covar = fit_curve(China_GDP, 'GDP per capita (current US$)', logistic, log_p0 )
-print(param, covar)
-sigma = np.sqrt(np.diag(covar))
-
-
-plot_future_value(China_GDP, 1960, 2031, logistic, 'GDP per capita (current US$)', param, sigma)
-
-
-
-
