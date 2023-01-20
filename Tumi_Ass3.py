@@ -419,7 +419,7 @@ def plot_future_value(df, start_year, end_year, fit_function, y_var, param, sigm
     Plots the future values of a variable using an exponential function and error ranges.
     
     Parameters:
-        df (dataframe): Dataframe containing the data
+       df (dataframe): Dataframe containing the data
         start_year (int): Starting year for the forecast
         end_year (int): Ending year for the forecast
         fit_function (callable): fitting function for forecast
@@ -444,4 +444,5 @@ def plot_future_value(df, start_year, end_year, fit_function, y_var, param, sigm
     plt.legend()
     plt.show()
 
-
+param, covar = fit_curve(China_GDP, 'GDP per capita (current US$)', exponential, exp_p0 )
+sigma = np.sqrt(np.diag(covar))
